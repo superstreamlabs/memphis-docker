@@ -37,7 +37,7 @@ services:
     ports:
       - "9000:80"
     environment:
-      - CONTROL_PLANE=memphis-control-plane-1
+      - CONTROL_PLANE_URL=memphis-control-plane-1
 networks:
   memphis:
     ipam:
