@@ -1,4 +1,45 @@
 version: "3.9"
 services:
-  redis:
-    image: "nginx"
+  mongo:
+    image: "mongo:4.2"
+    networks:
+      - memphis
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=memphis
+      - MONGO_INITDB_ROOT_PASSWORD=memph1smong0
+  cluster:
+    image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
+    networks:
+      - memphis
+    ports:
+      - "7766:4222"
+      - "6222:6222"
+      - "8222:8222"
+    command: >
+      -js --auth=memphis
+  control-plane:
+    image: "memphisos/memphis-control-plane:latest"
+    networks:
+      - memphis
+    ports:
+      - "5555:5555"
+      - "6666:8877"
+    environment:
+      - ROOT_PASSWORD=memphis
+      - CONNECTION_TOKEN=memphis
+      - MONGO_URL=memphis-mongo-1
+      - BROKER_URL=memphis-cluster-1
+  ui:
+    image: "memphisos/memphis-ui:latest"
+    networks:
+      - memphis
+    ports:
+      - "9000:80"
+    environment:
+      - CONTROL_PLANE=memphis-control-plane-1
+networks:
+  memphis:
+    ipam:
+      driver: default
