@@ -2,7 +2,7 @@
 <br><br>
 [![Github tag](https://badgen.net/github/tag/Naereen/Strapdown.js)](https://github.com/Memphis-OS/memphis-docker/tags/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Memphis-OS/memphis-control-plane/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
 
-Struggle to install, configure and update Kafka? Too many data sources and too many schemas? Require grater performance for your data streams? Your architecture is based on post-processing of data and you want to switch to real-time in minutes instead of months?
+Too many data sources and too many schemas? Looking for a messaging queue to scale your data-driven architecture? Require greater performance for your data streams? Your architecture is based on post-processing data, and you want to switch to real-time in minutes instead of months? Struggle to install, configure and update Kafka/RabbitMQ/and other MQs?
 
 **Meet Memphis**
 
