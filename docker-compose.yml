@@ -30,7 +30,7 @@ services:
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV="true"
   ui:
-    image: "memphisos/memphis-ui:latest"
+    image: "memphisos/memphis-ui:0.1.0-docker"
     networks:
       - memphis
     ports:
