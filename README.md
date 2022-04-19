@@ -2,6 +2,10 @@
 <br><br>
 [![Github tag](https://badgen.net/github/tag/Naereen/Strapdown.js)](https://github.com/Memphis-OS/memphis-docker/tags/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Memphis-OS/memphis-control-plane/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
 
+Struggle to install, configure and update Kafka? Too many data sources and too many schemas? Require grater performance for your data streams? Your architecture is based on post-processing of data and you want to switch to real-time in minutes instead of months?
+
+**Meet Memphis**
+
 **[Memphis](https://memphis.dev)** is a dev-first, cloud-native, event processing platform made out of devs' struggles with tools like Kafka, RabbitMQ, NATS, and others, allowing you to achieve all other message brokers' benefits in a fraction of the time.<br><br>
 **[Memphis](https://memphis.dev) delivers:**
 - The most simple to use Message Broker (With the same behaivour as NATS and Kafka)
