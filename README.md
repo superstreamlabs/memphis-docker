@@ -34,7 +34,25 @@ For Memphis docker-based deployment
 
 **Table of Contents**
 
-[TOC]
+- [Memphis Components](#memphis-components)
+- [Memphis repos](#memphis-repos)
+- [Current SDKs](#current-sdks)
+- [Installation](#installation)
+  * [Kubernetes](#kubernetes)
+    + [Install](#install)
+    + [K8S Diagram](#k8s-diagram)
+  * [Docker](#docker)
+    + [Install](#install-1)
+- [Next Steps](#next-steps)
+  * [Kubernetes](#kubernetes-1)
+    + [Localhost Environment](#localhost-environment)
+    + [Production Environments](#production-environments)
+  * [Docker](#docker-1)
+- [Memphis Contributors](#memphis-contributors)
+- [Contribution guidelines](#contribution-guidelines)
+- [Documentation](#documentation)
+- [Contact](#contact)
+
 
 ## Memphis Components
 ![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/graphics+for+github/components+diagram.png)
