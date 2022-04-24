@@ -1,6 +1,6 @@
 ![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/Vector_page-0001.jpg)
 <br><br>
-[![Github tag](https://badgen.net/github/tag/Naereen/Strapdown.js)](https://github.com/Memphis-OS/memphis-docker/tags/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Memphis-OS/memphis-control-plane/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
+![Github tag](https://img.shields.io/github/v/release/memphis-os/memphis-docker) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Memphis-OS/memphis-control-plane/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
 
 Too many data sources and too many schemas? Looking for a messaging queue to scale your data-driven architecture? Require greater performance for your data streams? Your architecture is based on post-processing data, and you want to switch to real-time in minutes instead of months? Struggle to install, configure and update Kafka/RabbitMQ/and other MQs?
 
@@ -17,7 +17,7 @@ Too many data sources and too many schemas? Looking for a messaging queue to sca
 RabbitMQ has Queues, Kafka as Topics, **Memphis has Stations.**
 #### TL;DR
 **On Day 1 (For the DevOps heros out there) -**<br>
-Memphis framework provides the same old and loved behavior (Produce-Consume) of other data lakes and MQs, but removes completly the complexity barriers, messy documentation, ops, manual scale, orchestration and more.
+Memphis platform provides the same old and loved behavior (Produce-Consume) of other data lakes and MQs, but removes completly the complexity barriers, messy documentation, ops, manual scale, orchestration and more.
 
 **On Day 2 (For the Developers) -**
 Developer lives with developing real-time, event-driven apps that are too complex.
@@ -53,18 +53,19 @@ For Memphis docker-based deployment
 - [Documentation](#documentation)
 - [Contact](#contact)
 
-
 ## Memphis Components
-![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/graphics+for+github/components+diagram.png)
+![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/graphics+for+github/components+diagram.png )
 
 ## Memphis repos
 - [memphis-control-plane](https://github.com/Memphis-OS/memphis-control-plane "memphis-control-plane")
 - [memphis-ui](https://github.com/Memphis-OS/memphis-ui "memphis-ui")
 - [memphis-broker](https://github.com/Memphis-OS/memphis-broker "memphis-broker")
-- [memphis JS SDK](https://github.com/Memphis-OS/memphis.js "JS SDK")
 - [memphis-cli](https://github.com/Memphis-OS/memphis-cli "memphis-cli")
 - [memphis-k8s](https://github.com/Memphis-OS/memphis-k8s "memphis-k8s")
 - [memphis-docker](https://github.com/Memphis-OS/memphis-docker "memphis-docker")
+
+## Current SDKs
+- [memphis-js](https://github.com/Memphis-OS/memphis.js "Node.js")
 
 ## Installation
 
@@ -126,7 +127,11 @@ Please expose the UI, Cluster, and Control-plane via k8s ingress / load balancer
 ------------
 
 ### Docker
-soon
+**To access Memphis, run the below commands:**
+Dashboard - http://localhost:9000
+Broker - localhost:7766
+Control-Plane - localhost:5555/6666 
+
 ## Memphis Contributors
 <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Alon+Avrahami.jpg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Ariel+Bar.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Arjun+Anjaria.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Carlos+Gasperi.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Daniel+Eliyahu.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Itay+Katz.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Jim+Doty.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Nikita+Aizenberg.jpg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Rado+Marina.jpg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"><img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Raghav+Ramesh.jpg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Tal+Goldberg.jpg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;"> <img src="https://memphis-public-files.s3.eu-central-1.amazonaws.com/contributors-images/Yehuda+Mizrahi.jpeg" width="60" height="60" style="border-radius: 25px; border: 2px solid #61DFC6;">
 
@@ -134,7 +139,7 @@ soon
 
 soon
 
-## documentation
+## Documentation
 
 - [Official documentation](https://docs.memphis.dev)
 

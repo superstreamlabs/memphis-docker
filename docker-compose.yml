@@ -1,13 +1,14 @@
 services:
   mongo:
-    image: "mongo:4.2"
+    image: "memphisos/mongo:4.2"
     networks:
       - memphis
     ports:
       - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=memphis
-      - MONGO_INITDB_ROOT_PASSWORD=memph1smong0
+#    environment:
+#      - MONGO_INITDB_DATABASE=maindb
+#      - MONGO_INITDB_ROOT_USERNAME=memphis
+#      - MONGO_INITDB_ROOT_PASSWORD=memph1smong0
   cluster:
     image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
     networks:
