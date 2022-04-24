@@ -36,12 +36,6 @@ services:
       - memphis
     ports:
       - "9000:80"
-  mongo-busybox:
-    image: "memphisos/mongo:4.2"
-    networks:
-      - memphis
-    command: >
-      mongo --host mongo -u memphis -p memph1smong0 --authenticationDatabase admin --eval 'db.createUser({user: "memphis", pwd: "memph1smong0", roles:[{role: "userAdmin" , db:"maindb"}]})'
 networks:
   memphis:
     ipam:
