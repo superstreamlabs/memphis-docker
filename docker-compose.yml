@@ -1,11 +1,12 @@
 services:
   mongo:
-    image: "mongo:4.2"
+    image: "memphisos/mongo:4.2"
     networks:
       - memphis
     ports:
       - "27017:27017"
     environment:
+      - MONGO_INITDB_DATABASE=admin
       - MONGO_INITDB_ROOT_USERNAME=memphis
       - MONGO_INITDB_ROOT_PASSWORD=memph1smong0
   cluster:
@@ -35,6 +36,12 @@ services:
       - memphis
     ports:
       - "9000:80"
+  mongo-busybox:
+    image: "memphisos/mongo:4.2"
+    networks:
+      - memphis
+    command: >
+      mongo --host mongo -u memphis -p memph1smong0 --authenticationDatabase admin --eval 'db.createUser({user: "memphis", pwd: "memph1smong0", roles:[{role: "userAdmin" , db:"maindb"}]})'
 networks:
   memphis:
     ipam:

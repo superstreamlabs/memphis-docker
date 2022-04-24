@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: "memphisos/mongo:4.2"
+    networks:
+      - internal
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=memphis
+      - MONGO_INITDB_ROOT_PASSWORD=memph1smong0
+  mongo-busybox:
+    image: "memphisos/mongo-busybox"
+    networks:
+      - internal
+networks:
+  internal:
+    ipam:
+      driver: default
