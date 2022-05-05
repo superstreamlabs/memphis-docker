@@ -7,7 +7,7 @@ services:
       - memphis
     ports:
       - "27017:27017"
-  cluster:
+  broker:
     image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
     restart: on-failure
     pull_policy: always
