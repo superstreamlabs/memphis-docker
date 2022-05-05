@@ -15,8 +15,6 @@ services:
       - memphis
     ports:
       - "7766:4222"
-      - "6222:6222"
-      - "8222:8222"
     command: >
       -js --auth=memphis
   control-plane:
@@ -27,7 +25,7 @@ services:
       - memphis
     ports:
       - "5555:5555"
-      - "6666:8877"
+      - "6666:6666"
     environment:
       - ROOT_PASSWORD=memphis
       - CONNECTION_TOKEN=memphis
