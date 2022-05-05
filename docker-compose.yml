@@ -7,7 +7,7 @@ services:
       - memphis
     ports:
       - "27017:27017"
-  cluster:
+  broker:
     image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
     restart: on-failure
     pull_policy: always
@@ -21,6 +21,9 @@ services:
     image: "memphisos/memphis-control-plane:latest"
     restart: on-failure
     pull_policy: always
+    depends_on:
+      - mongo
+      - broker
     networks:
       - memphis
     ports:
@@ -34,6 +37,8 @@ services:
     image: "memphisos/memphis-ui:0.1.0-docker"
     restart: on-failure
     pull_policy: always
+    depends_on:
+      - control-plane
     networks:
       - memphis
     ports:
