@@ -38,6 +38,8 @@ services:
       - memphis
     ports:
       - "9000:80"
+    environment:
+      - DOCKER_ENV="true"
 networks:
   memphis:
     ipam:
