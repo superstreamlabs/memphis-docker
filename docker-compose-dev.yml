@@ -1,0 +1,46 @@
+services:
+  mongo:
+    image: "memphisos/mongo:4.2"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "27017:27017"
+  broker:
+    image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "7766:4222"
+    command: >
+      -js --auth=memphis
+  control-plane:
+    image: "memphisos/memphis-control-plane:latest"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "5555:5555"
+      - "6666:6666"
+    environment:
+      - ROOT_PASSWORD=memphis
+      - CONNECTION_TOKEN=memphis
+      - DOCKER_ENV=true
+  ui:
+    image: "memphisos/memphis-ui:0.1.0-docker"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "9000:80"
+    environment:
+      - DOCKER_ENV=true
+networks:
+  memphis:
+    ipam:
+      driver: default
