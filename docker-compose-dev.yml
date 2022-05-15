@@ -30,7 +30,6 @@ services:
       - ROOT_PASSWORD=memphis
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
-      - ANALYTICS=false
   ui:
     image: "memphisos/memphis-ui:0.1.0-docker"
     restart: on-failure
