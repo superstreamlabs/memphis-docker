@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
   broker:
-    image: "memphisos/memphis-broker:2.7.2-alpine3.15-docker"
+    image: "memphisos/memphis-broker-staging:latest"
     restart: on-failure
     pull_policy: always
     networks:
@@ -18,7 +18,7 @@ services:
     command: >
       -js --auth=memphis
   control-plane:
-    image: "memphisos/memphis-control-plane:latest"
+    image: "memphisos/memphis-control-plane-staging-test:latest"
     restart: on-failure
     pull_policy: always
     networks:
@@ -31,7 +31,7 @@ services:
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
   ui:
-    image: "memphisos/memphis-ui:0.1.0-docker"
+    image: "memphisos/memphis-ui-staging:latest"
     restart: on-failure
     pull_policy: always
     networks:
