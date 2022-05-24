@@ -31,7 +31,7 @@ services:
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
   ui:
-    image: "memphisos/memphis-ui-staging:latest"
+    image: "memphisos/memphis-ui-staging:latest-docker"
     restart: on-failure
     pull_policy: always
     networks:
