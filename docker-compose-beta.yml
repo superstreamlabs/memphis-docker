@@ -1,4 +1,4 @@
-ervices:
+services:
   mongo:
     image: "memphisos/mongo:4.2"
     restart: on-failure
