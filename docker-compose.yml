@@ -17,7 +17,7 @@ services:
       - "7766:4222"
     command: >
       -js --auth=memphis
-  control-plane:
+  memphis-cluster:
     image: "memphisos/memphis-control-plane:latest"
     restart: on-failure
     pull_policy: always
@@ -30,9 +30,10 @@ services:
       - ROOT_PASSWORD=memphis
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
+      - LOGS_RETENTION_IN_DAYS="3"
       - ANALYTICS=true
   ui:
-    image: "memphisos/memphis-ui:0.1.0-docker"
+    image: "memphisos/memphis-ui:latest"
     restart: on-failure
     pull_policy: always
     networks:
