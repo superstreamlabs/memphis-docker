@@ -30,6 +30,7 @@ services:
       - ROOT_PASSWORD=memphis
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
+      - LOGS_RETENTION_IN_DAYS="3"
       - ANALYTICS=true
   ui:
     image: "memphisos/memphis-ui:beta"
