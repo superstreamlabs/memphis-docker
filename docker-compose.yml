@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
   broker:
-    image: "memphisos/memphis-broker:2.7.2-alpine3.15"
+    image: "memphisos/memphis-nats:2.7.2-alpine3.15"
     restart: on-failure
     pull_policy: always
     networks:
