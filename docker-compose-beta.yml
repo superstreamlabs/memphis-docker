@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
   broker:
-    image: "memphisos/memphis-broker:beta"
+    image: "memphisos/memphis-nats:2.7.2-alpine3.15"
     restart: on-failure
     pull_policy: always
     networks:
@@ -18,7 +18,7 @@ services:
     command: >
       -js --auth=memphis
   memphis-cluster:
-    image: "memphisos/memphis-control-plane:beta"
+    image: "memphisos/memphis-broker:beta"
     restart: on-failure
     pull_policy: always
     networks:
@@ -30,7 +30,7 @@ services:
       - ROOT_PASSWORD=memphis
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
-      - LOGS_RETENTION_IN_DAYS="3"
+      - LOGS_RETENTION_IN_DAYS=3
       - ANALYTICS=true
   ui:
     image: "memphisos/memphis-ui:beta"
