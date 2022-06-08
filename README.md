@@ -1,6 +1,6 @@
 ![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/Vector_page-0001.jpg)
 <br><br>
-![Github tag](https://img.shields.io/github/v/release/memphis-os/memphis-docker) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Memphis-OS/memphis-control-plane/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
+![Github tag](https://img.shields.io/github/v/release/memphisdev/memphis-docker) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/memphisdev/memphis-broker/commit-activity) [![GoReportCard example](https://goreportcard.com/badge/github.com/nanomsg/mangos)](https://goreportcard.com/report/github.com/nanomsg/mangos)
 
 Too many data sources and too many schemas? Looking for a messaging queue to scale your data-driven architecture? Require greater performance for your data streams? Your architecture is based on post-processing data, and you want to switch to real-time in minutes instead of months? Struggle to install, configure and update Kafka/RabbitMQ/and other MQs?
 
@@ -38,16 +38,16 @@ For Memphis docker-based deployment
 - [Memphis repos](#memphis-repos)
 - [Current SDKs](#current-sdks)
 - [Installation](#installation)
-  * [Kubernetes](#kubernetes)
-    + [Install](#install)
-    + [K8S Diagram](#k8s-diagram)
-  * [Docker](#docker)
-    + [Install](#install-1)
+  - [Kubernetes](#kubernetes)
+    - [Install](#install)
+    - [K8S Diagram](#k8s-diagram)
+  - [Docker](#docker)
+    - [Install](#install-1)
 - [Next Steps](#next-steps)
-  * [Kubernetes](#kubernetes-1)
-    + [Localhost Environment](#localhost-environment)
-    + [Production Environments](#production-environments)
-  * [Docker](#docker-1)
+  - [Kubernetes](#kubernetes-1)
+    - [Localhost Environment](#localhost-environment)
+    - [Production Environments](#production-environments)
+  - [Docker](#docker-1)
 - [Memphis Contributors](#memphis-contributors)
 - [Contribution guidelines](#contribution-guidelines)
 - [Documentation](#documentation)
@@ -57,15 +57,15 @@ For Memphis docker-based deployment
 ![](https://memphis-public-files.s3.eu-central-1.amazonaws.com/graphics+for+github/components+diagram.png )
 
 ## Memphis repos
-- [memphis-control-plane](https://github.com/Memphis-OS/memphis-control-plane "memphis-control-plane")
-- [memphis-ui](https://github.com/Memphis-OS/memphis-ui "memphis-ui")
-- [memphis-broker](https://github.com/Memphis-OS/memphis-broker "memphis-broker")
-- [memphis-cli](https://github.com/Memphis-OS/memphis-cli "memphis-cli")
-- [memphis-k8s](https://github.com/Memphis-OS/memphis-k8s "memphis-k8s")
-- [memphis-docker](https://github.com/Memphis-OS/memphis-docker "memphis-docker")
+- [memphis-broker](https://github.com/memphisdev/memphis-broker "memphis-broker")
+- [memphis-ui](https://github.com/memphisdev/memphis-ui "memphis-ui")
+- [memphis-cli](https://github.com/memphisdev/memphis-cli "memphis-cli")
+- [memphis-k8s](https://github.com/memphisdev/memphis-k8s "memphis-k8s")
+- [memphis-docker](https://github.com/memphisdev/memphis-docker "memphis-docker")
 
 ## Current SDKs
-- [memphis-js](https://github.com/Memphis-OS/memphis.js "Node.js")
+- [memphis-js](https://github.com/memphisdev/memphis.js "Node.js")
+- [memphis-py](https://github.com/memphisdev/memphis.py "Python")
 
 ## Installation
 
@@ -94,7 +94,7 @@ Example:<br>
 
 ### Docker
 #### Install
-    curl -s https://memphis-os.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml
+    curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml
     docker compose -f docker-compose.yml -p memphis up
 
 The following will be deployed as docker containers
