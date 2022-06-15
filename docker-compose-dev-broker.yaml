@@ -1,0 +1,34 @@
+services:
+  mongo:
+    image: "memphisos/mongo:4.2"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "27017:27017"
+  broker:
+    image: "memphisos/memphis-nats:2.7.2-alpine3.15"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "7766:4222"
+    command: >
+      -js --auth=memphis
+  ui:
+    image: "memphisos/memphis-ui:latest"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "9000:80"
+    environment:
+      - DOCKER_ENV=true
+
+networks:
+  memphis:
+    ipam:
+      driver: default
