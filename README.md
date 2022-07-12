@@ -39,7 +39,7 @@ helm install my-memphis memphis/memphis --create-namespace --namespace memphis
 Docker Compose
 ```shell
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && \
-docker compose -f docker-compose.yml -p memphis up
+docker-compose -f docker-compose.yml -p memphis up
 ```
 
 [Connect your 1st app here](https://medium.com/memphis-dev/how-to-build-your-own-wolt-app-b220d738bb71)
