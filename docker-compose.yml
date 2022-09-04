@@ -7,7 +7,7 @@ services:
       - memphis
     ports:
       - "27017:27017"
-   memphis-cluster:
+  memphis-cluster:
     image: "memphisos/memphis-broker:latest"
     restart: on-failure
     pull_policy: always
