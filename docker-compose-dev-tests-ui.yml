@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
   memphis-cluster:
-    image: "memphisos/memphis-broker-staging:latest"
+    image: "memphisos/memphis-broker:latest"
     restart: on-failure
     pull_policy: always
     networks:
@@ -26,7 +26,7 @@ services:
     command: >
       -js --auth=memphis
   ui:
-    image: "memphisos/memphis-ui-staging-test:latest"
+    image: "memphisos/memphis-ui-latest-test:latest"
     restart: on-failure
     pull_policy: always
     networks:
