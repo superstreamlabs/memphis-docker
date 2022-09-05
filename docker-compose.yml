@@ -7,18 +7,8 @@ services:
       - memphis
     ports:
       - "27017:27017"
-  broker:
-    image: "memphisos/memphis-nats:2.7.2-alpine3.15"
-    restart: on-failure
-    pull_policy: always
-    networks:
-      - memphis
-    ports:
-      - "7766:4222"
-    command: >
-      -js --auth=memphis
-  memphis-cluster:
-    image: "memphisos/memphis-broker:latest"
+   memphis-cluster:
+    image: "memphisos/memphis-broker-master:latest"
     restart: on-failure
     pull_policy: always
     networks:
@@ -31,9 +21,12 @@ services:
       - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
       - LOGS_RETENTION_IN_DAYS=3
-      - ANALYTICS=true
+      - JWT_SECRET=35nhvjfosfklgmfg56+fdsgzvfnjksacvbhfksfkgofadsjfgjkoldsdkfvpl’jbgio;dfsjgkl;’XZFVMifobd;dlgjv[sfvjmiodfkvs2fh;fhk44gfdhksdkfdffk
+      - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
+    command: >
+      -js --auth=memphis
   ui:
-    image: "memphisos/memphis-ui:latest"
+    image: "memphisos/memphis-ui-master:latest"
     restart: on-failure
     pull_policy: always
     networks:
