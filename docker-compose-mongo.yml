@@ -5,8 +5,6 @@ services:
     pull_policy: always
     networks:
       - memphis
-    ports:
-      - "27017:27017"
 networks:
   memphis:
     ipam:
