@@ -5,8 +5,6 @@ services:
     pull_policy: always
     networks:
       - memphis
-    ports:
-      - "27017:27017"
    memphis-cluster:
     image: "memphisos/memphis-broker-master:latest"
     restart: on-failure
