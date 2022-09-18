@@ -12,7 +12,7 @@ services:
     networks:
       - memphis
     ports:
-      - "5555:5555"
+      - "9000:9000"
       - "6666:6666"
     environment:
       - ROOT_PASSWORD=memphis
