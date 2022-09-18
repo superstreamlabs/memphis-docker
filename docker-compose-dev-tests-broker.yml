@@ -5,8 +5,6 @@ services:
     pull_policy: always
     networks:
       - memphis
-    ports:
-      - "27017:27017"
   memphis-cluster:
     image: "memphisos/memphis-broker-master-test:latest"
     restart: on-failure
@@ -25,16 +23,6 @@ services:
       - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
     command: >
       -js --auth=memphis
-  ui:
-    image: "memphisos/memphis-ui-master:latest"
-    restart: on-failure
-    pull_policy: always
-    networks:
-      - memphis
-    ports:
-      - "9000:80"
-    environment:
-      - DOCKER_ENV=true
 networks:
   memphis:
     ipam:
