@@ -6,7 +6,7 @@ services:
     networks:
       - memphis
   memphis-cluster:
-    image: "memphisos/memphis-broker:latest"
+    image: "memphisos/memphis-broker-master:latest"
     restart: on-failure
     pull_policy: always
     networks:
