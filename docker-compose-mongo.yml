@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: "memphisos/mongo:4.2"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+networks:
+  memphis:
+    ipam:
+      driver: default
