@@ -6,7 +6,7 @@ services:
     networks:
       - memphis
   memphis-cluster:
-    image: "memphisos/memphis-broker-master-test:latest"
+    image: "memphisos/memphis-broker-latest-test:latest"
     healthcheck:
       test: wget http://127.0.0.1:9000 --spider || exit 1
       interval: 10s
