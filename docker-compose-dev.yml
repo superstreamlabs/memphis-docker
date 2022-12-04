@@ -7,6 +7,11 @@ services:
       - memphis
   memphis-cluster:
     image: "memphisos/memphis-broker:latest"
+    healthcheck:
+      test: wget http://127.0.0.1:9000 --spider || exit 1
+      interval: 10s
+      retries: 5
+      start_period: 5s
     restart: on-failure
     pull_policy: always
     networks:
@@ -24,6 +29,24 @@ services:
       - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
     command: >
       -js --auth=memphis --websocket_no_tls=true
+  memphis-http-proxy:
+    image: "memphisos/memphis-http-proxy:latest"
+    depends_on:
+      memphis-cluster:
+        condition: service_healthy
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "4444:4444"
+    environment:
+      - JWT_SECRET=35nhvjfosfklgmfg56+fdsgzvfnjksacvbhfksfkgofadsjfgjkoldsdkfvpl’jbgio;dfsjgkl;’XZFVMifobd;dlgjv[sfvjmiodfkvs2fh;fhk44gfdhksdkfdffk
+      - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
+      - CONNECTION_TOKEN=memphis
+      - ROOT_USER=root
+      - MEMPHIS_HOST=memphis-cluster
+      - HTTP_PORT=4444
 networks:
   memphis:
     ipam:
