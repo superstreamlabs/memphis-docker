@@ -74,7 +74,7 @@ but then you encounter Apache Kafka and its documentation and run back to the mo
 
 [**Roadmap**](https://github.com/orgs/memphisdev/projects/2/views/1)
 
-**[v0.4.1](https://docs.memphis.dev/memphis/release-notes/releases/v0.4.1-beta)**
+**[v0.4.2](https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta)**
 
 - 🚀 Fully optimized message broker in under 3 minutes
 - 💻 Easy-to-use UI, CLI, and SDKs
@@ -177,8 +177,8 @@ Please refer to our [Contribution Guidelines](./CONTRIBUTING.md) and [Code of Co
 ## Contributors ✨
 
 Thanks goes to these wonderful people ❤:<br><br>
- <a href = "https://github.com/memphisdev/memphis-broker/graphs/contributors">
-   <img src = "https://contrib.rocks/image?repo=memphisdev/memphis-broker"/>
+ <a href = "https://github.com/memphisdev/memphis-docker/graphs/contributors">
+   <img src = "https://contrib.rocks/image?repo=memphisdev/memphis-docker"/>
  </a>
 
 ## License 📃
