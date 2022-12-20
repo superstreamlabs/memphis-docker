@@ -134,8 +134,8 @@ Broker: localhost:6666<br>
 Please expose the UI, Cluster, and Control-plane via k8s ingress / load balancer / nodeport
 
 ### Via Docker
-UI - http://localhost:9000<br>
-Broker - http://localhost:6666<br>
+Dashboard/CLI: http://localhost:9000<br>
+Broker: localhost:6666<br>
 
 ## Beta
 Memphis{dev} is currently in Beta version. This means that we are still working on essential features like real-time messages tracing, schema registry and inline processing as well as making more SDKs and supporting materials.
