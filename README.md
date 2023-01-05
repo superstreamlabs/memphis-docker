@@ -30,7 +30,11 @@
 </p>
 
 <p align="center">
-<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a> <a href=""><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis-broker?color=6557ff"></a> <a href="https://github.com/memphisdev/memphis-broker/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> <a href="https://github.com/memphisdev/memphis-broker/blob/master/LICENSE"><img src="https://img.shields.io/github/license/memphisdev/memphis-broker?color=ffc633"></a> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis-broker?color=61dfc6"> <img src="https://img.shields.io/github/last-commit/memphisdev/memphis-broker?color=61dfc6&label=last%20commit">
+<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a>
+<a href="https://github.com/memphisdev/memphis-broker/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis-broker?color=6557ff"></a> 
+<a href="https://github.com/memphisdev/memphis-broker/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> 
+<a href="https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis-broker?color=61dfc6"></a>
+<img src="https://img.shields.io/github/last-commit/memphisdev/memphis-broker?color=61dfc6&label=last%20commit">
 </p>
 
 **[Memphis{dev}](https://memphis.dev)** is an open-source real-time data processing platform<br>
@@ -70,7 +74,7 @@ but then you encounter Apache Kafka and its documentation and run back to the mo
 
 [**Roadmap**](https://github.com/orgs/memphisdev/projects/2/views/1)
 
-**[v0.4.1](https://docs.memphis.dev/memphis/release-notes/releases/v0.4.1-beta)**
+**[v0.4.2](https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta)**
 
 - 🚀 Fully optimized message broker in under 3 minutes
 - 💻 Easy-to-use UI, CLI, and SDKs
@@ -114,25 +118,28 @@ docker compose -f docker-compose.yml -p memphis up
 
 ## Local access
 ### Via Kubernetes
-To access Memphis UI from localhost, run the below commands:
 ```shell
-kubectl port-forward service/memphis-ui 9000:80 --namespace memphis > /dev/null &
-```
+To access Memphis using UI/CLI/SDK from localhost, run the below commands:
 
-To access Memphis using CLI or SDK from localhost, run the below commands:</br>
-```shell
-kubectl port-forward service/memphis-cluster 6666:6666 5555:5555 --namespace memphis > /dev/null &
+  - kubectl port-forward service/memphis-cluster 6666:6666 9000:9000 7770:7770 --namespace memphis > /dev/null &
+
+For interacting with the broker via HTTP:
+
+  - kubectl port-forward service/memphis-http-proxy 4444:4444 --namespace memphis > /dev/null &
+
+Dashboard/CLI: http://localhost:9000
+Broker: localhost:6666 (Client Connections)
+HTTP proxy: localhost:4444 (Data + Mgmt)
 ```
-Dashboard: http://localhost:9000</br>
-Memphis broker: http://localhost:6666
 
 **For Production Environments**
 Please expose the UI, Cluster, and Control-plane via k8s ingress / load balancer / nodeport
 
 ### Via Docker
-UI - http://localhost:9000<br>
-Broker - http://localhost:6666<br>
-
+```shell
+Dashboard/CLI: http://localhost:9000
+Broker: localhost:6666
+```
 ## Beta
 Memphis{dev} is currently in Beta version. This means that we are still working on essential features like real-time messages tracing, schema registry and inline processing as well as making more SDKs and supporting materials.
 
@@ -173,8 +180,8 @@ Please refer to our [Contribution Guidelines](./CONTRIBUTING.md) and [Code of Co
 ## Contributors ✨
 
 Thanks goes to these wonderful people ❤:<br><br>
- <a href = "https://github.com/memphisdev/memphis-broker/graphs/contributors">
-   <img src = "https://contrib.rocks/image?repo=memphisdev/memphis-broker"/>
+ <a href = "https://github.com/memphisdev/memphis-docker/graphs/contributors">
+   <img src = "https://contrib.rocks/image?repo=memphisdev/memphis-docker"/>
  </a>
 
 ## License 📃
