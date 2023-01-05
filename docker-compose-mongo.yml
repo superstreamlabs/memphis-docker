@@ -5,11 +5,10 @@ services:
     pull_policy: always
     networks:
       - memphis
+    ports:
+      - "27017:27017"
   memphis-http-proxy:
     image: "memphisos/memphis-http-proxy:latest"
-    depends_on:
-      memphis-cluster:
-        condition: service_healthy
     restart: on-failure
     pull_policy: always
     networks:
