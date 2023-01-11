@@ -32,3 +32,6 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
+      - name: Run varuables check script
+        run: ./.github/scripts/mandatory_variable_check.sh
+        shell: bash
