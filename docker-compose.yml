@@ -27,8 +27,8 @@ services:
       - DOCKER_ENV=true
       - ANALYTICS=true
       - LOGS_RETENTION_IN_DAYS=3
-      - JWT_SECRET=35nhvjfosfklgmfg56+fdsgzvfnjksacvbhfksfkgofadsjfgjkoldsdkfvpl’jbgio;dfsjgkl;’XZFVMifobd;dlgjv[sfvjmiodfkvs2fh;fhk44gfdhksdkfdffk
-      - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
+      - JWT_SECRET=JWT_TEST_PURPOSE
+      - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
     command: >
       -js --auth=memphis --websocket_no_tls=true -m 8222
   memphis-http-proxy:
@@ -43,8 +43,8 @@ services:
     ports:
       - "4444:4444"
     environment:
-      - JWT_SECRET=35nhvjfosfklgmfg56+fdsgzvfnjksacvbhfksfkgofadsjfgjkoldsdkfvpl’jbgio;dfsjgkl;’XZFVMifobd;dlgjv[sfvjmiodfkvs2fh;fhk44gfdhksdkfdffk
-      - REFRESH_JWT_SECRET=35c7b3eb969db065bfa3c66b38e4323e8f73113f3965dfb55c6bc585dcb0ba62bd399e2588fdc8f709ae0b63fb24be32590f134506ca1d7a4314339f11b8045a
+      - JWT_SECRET=JWT_TEST_PURPOSE
+      - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
       - CONNECTION_TOKEN=memphis
       - ROOT_USER=root
       - MEMPHIS_HOST=memphis-cluster
