@@ -10,7 +10,7 @@ services:
     healthcheck:
       test: wget http://127.0.0.1:9000 --spider || exit 1
       interval: 10s
-      retries: 5
+      retries: 30
       start_period: 5s
     restart: on-failure
     pull_policy: always
