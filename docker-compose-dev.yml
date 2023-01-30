@@ -28,6 +28,8 @@ services:
       - LOGS_RETENTION_IN_DAYS=3
       - JWT_SECRET=JWT_TEST_PURPOSE
       - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     command: >
       -js --auth=memphis --websocket_no_tls=true -m 8222
   memphis-http-proxy:
