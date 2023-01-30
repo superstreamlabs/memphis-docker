@@ -27,8 +27,8 @@ node {
       withCredentials([sshUserPrivateKey(keyFileVariable:'check',credentialsId: 'main-github')]) {
         sh "git reset --hard origin/latest" //change to latest
         sh"""
-          GIT_SSH_COMMAND='ssh -i $check'  git checkout -b \$(cat version.conf)
-          GIT_SSH_COMMAND='ssh -i $check'  git push --set-upstream origin \$(cat version.conf)
+          GIT_SSH_COMMAND='ssh -i $check'  git checkout -b v\$(cat version.conf)
+          GIT_SSH_COMMAND='ssh -i $check'  git push --set-upstream origin v\$(cat version.conf)
         """
       }
     }
