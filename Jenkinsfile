@@ -27,8 +27,8 @@ node {
       withCredentials([sshUserPrivateKey(keyFileVariable:'check',credentialsId: 'main-github')]) {
         sh "git reset --hard origin/latest" //change to latest
         sh"""
-          GIT_SSH_COMMAND='ssh -i $check'  git checkout -b \$(cat version.conf)
-          GIT_SSH_COMMAND='ssh -i $check'  git push --set-upstream origin \$(cat version.conf)
+          GIT_SSH_COMMAND='ssh -i $check'  git checkout -b v\$(cat version.conf)
+          GIT_SSH_COMMAND='ssh -i $check'  git push --set-upstream origin v\$(cat version.conf)
         """
       }
     }
@@ -38,7 +38,7 @@ node {
       sh 'sudo yum install gh -y'
       sh 'sudo yum install jq -y'
       withCredentials([string(credentialsId: 'gh_token', variable: 'GH_TOKEN')]) {
-        sh(script:"""gh release create \$(cat version.conf) --generate-notes""", returnStdout: true)
+        sh(script:"""gh release create v\$(cat version.conf) --generate-notes --target latest""", returnStdout: true)
       }
     }
     
