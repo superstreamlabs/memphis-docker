@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
   memphis-rest-gateway:
-    image: "memphisos/memphis-rest-gateway:latest"
+    image: "memphisos/memphis-rest-gateway:master"
     restart: on-failure
     pull_policy: always
     networks:
