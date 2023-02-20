@@ -34,7 +34,7 @@ services:
     command: >
       -js --auth=memphis --websocket_no_tls=true -m 8222
   memphis-rest-gateway:
-    image: "memphisos/memphis-rest-gateway:master"
+    image: "memphisos/memphis-rest-gateway:latest"
     depends_on:
       memphis-cluster:
         condition: service_healthy
