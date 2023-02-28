@@ -6,7 +6,7 @@ services:
     networks:
       - memphis
   memphis:
-    image: "memphisos/memphis-master:latest"
+    image: "memphisos/memphis:latest"
     healthcheck:
       test: wget http://127.0.0.1:9000 --spider || exit 1
       interval: 10s
