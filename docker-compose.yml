@@ -5,8 +5,8 @@ services:
     pull_policy: always
     networks:
       - memphis
-  memphis-cluster:
-    image: "memphisos/memphis-broker-master:latest"
+  memphis:
+    image: "memphisos/memphis-master:latest"
     healthcheck:
       test: wget http://127.0.0.1:9000 --spider || exit 1
       interval: 10s
@@ -36,7 +36,7 @@ services:
   memphis-rest-gateway:
     image: "memphisos/memphis-rest-gateway:master"
     depends_on:
-      memphis-cluster:
+      memphis:
         condition: service_healthy
     restart: on-failure
     pull_policy: always
@@ -49,7 +49,7 @@ services:
       - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
       - CONNECTION_TOKEN=memphis
       - ROOT_USER=root
-      - MEMPHIS_HOST=memphis-cluster
+      - MEMPHIS_HOST=memphis
       - HTTP_PORT=4444
 networks:
   memphis:
