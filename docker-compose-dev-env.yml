@@ -1,0 +1,20 @@
+services:
+  postgresql:
+    image: docker.io/bitnami/postgresql:15
+    ports:
+      - '5555:5432'
+    environment:
+      - POSTGRESQL_USERNAME=memphis
+      - POSTGRESQL_PASSWORD=memphis
+  mongo:
+    image: "memphisos/mongo:4.2"
+    restart: on-failure
+    pull_policy: always
+    networks:
+      - memphis
+    ports:
+      - "27017:27017"
+networks:
+  memphis:
+    ipam:
+      driver: default
