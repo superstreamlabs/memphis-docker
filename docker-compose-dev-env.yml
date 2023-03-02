@@ -1,6 +1,6 @@
 services:
-  postgresql:
-    image: memphisos/memphis-metadata:15.2.0-debian-11-r5
+  memphis-metadata:
+    image: memphisos/memphis-metadata:15-docker
     ports:
       - '5555:5432'
     environment:
