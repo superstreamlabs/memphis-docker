@@ -1,6 +1,6 @@
 services:
   postgresql:
-    image: docker.io/bitnami/postgresql:15
+    image: memphisos/memphis-metadata:15.2.0-debian-11-r5
     ports:
       - '5555:5432'
     environment:
