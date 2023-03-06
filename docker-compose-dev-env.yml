@@ -1,6 +1,8 @@
 services:
   memphis-metadata:
     image: memphisos/memphis-metadata:15-docker
+    networks:
+      - memphis
     ports:
       - '5555:5432'
     environment:
