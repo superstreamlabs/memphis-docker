@@ -4,10 +4,12 @@ services:
     networks:
       - memphis
     ports:
-      - '5555:5432'
+      - '5005:5005'
     environment:
       - POSTGRESQL_USERNAME=memphis
       - POSTGRESQL_PASSWORD=memphis
+      - POSTGRESQL_DATABASE=memphis
+      - POSTGRESQL_PORT_NUMBER=5005
   mongo:
     image: "memphisos/mongo:4.2"
     restart: on-failure
