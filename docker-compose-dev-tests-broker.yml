@@ -1,6 +1,11 @@
 services:
   memphis-metadata:
     image: memphisos/memphis-metadata:15-docker
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U memphis -p 5005"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - memphis
     ports:
@@ -18,6 +23,9 @@ services:
       - memphis
   memphis:
     image: "memphisos/memphis-master-test:latest"
+    depends_on:
+      memphis-metadata:
+        condition: service_healthy
     healthcheck:
       test: wget http://127.0.0.1:9000 --spider || exit 1
       interval: 10s
