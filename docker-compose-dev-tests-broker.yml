@@ -39,6 +39,11 @@ services:
       - LOGS_RETENTION_IN_DAYS=3
       - JWT_SECRET=JWT_TEST_PURPOSE
       - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
+      - POSTGRESQL_USER=memphis
+	    - POSTGRESQL_PASS=memphis
+	    - POSTGRESQL_DBNAME=memphis
+	    - POSTGRESQL_HOST=localhost
+	    - POSTGRESQL_PORT=5005
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
