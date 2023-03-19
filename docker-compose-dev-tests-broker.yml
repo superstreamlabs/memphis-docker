@@ -52,6 +52,10 @@ services:
       - POSTGRESQL_DBNAME=memphis
       - POSTGRESQL_HOST=memphis-metadata
       - POSTGRESQL_PORT=5005
+      - CLIENTS_PORT=6666
+      - HTTP_PORT=9000
+      - WS_PORT=7770
+      - REST_GW_PORT=4444
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
