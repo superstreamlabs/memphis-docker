@@ -15,12 +15,6 @@ services:
       - POSTGRESQL_PASSWORD=memphis
       - POSTGRESQL_DATABASE=memphis
       - POSTGRESQL_PORT_NUMBER=5005
-  mongo:
-    image: "memphisos/mongo:4.2"
-    restart: on-failure
-    pull_policy: always
-    networks:
-      - memphis
   memphis:
     image: "memphisos/memphis-master-test:latest"
     depends_on:
@@ -42,20 +36,14 @@ services:
       - "8222:8222"
     environment:
       - ROOT_PASSWORD=memphis
-      - CONNECTION_TOKEN=memphis
       - DOCKER_ENV=true
-      - LOGS_RETENTION_IN_DAYS=3
       - JWT_SECRET=JWT_TEST_PURPOSE
       - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
-      - POSTGRESQL_USER=memphis
-      - POSTGRESQL_PASS=memphis
-      - POSTGRESQL_DBNAME=memphis
-      - POSTGRESQL_HOST=memphis-metadata
-      - POSTGRESQL_PORT=5005
-      - CLIENTS_PORT=6666
-      - HTTP_PORT=9000
-      - WS_PORT=7770
-      - REST_GW_PORT=4444
+      - METADATA_DB_USER=memphis
+      - METADATA_DB_PASS=memphis
+      - METADATA_DB_DBNAME=memphis
+      - METADATA_DB_HOST=memphis-metadata
+      - METADATA_DB_PORT=5005
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
