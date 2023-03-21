@@ -10,14 +10,6 @@ services:
       - POSTGRESQL_PASSWORD=memphis
       - POSTGRESQL_DATABASE=memphis
       - POSTGRESQL_PORT_NUMBER=5005
-  mongo:
-    image: "memphisos/mongo:4.2"
-    restart: on-failure
-    pull_policy: always
-    networks:
-      - memphis
-    ports:
-      - "27017:27017"
 networks:
   memphis:
     ipam:
