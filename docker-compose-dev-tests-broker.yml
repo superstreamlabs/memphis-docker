@@ -33,7 +33,6 @@ services:
       - "9000:9000"
       - "6666:6666"
       - "7770:7770"
-      - "8222:8222"
     environment:
       - ROOT_PASSWORD=memphis
       - DOCKER_ENV=true
