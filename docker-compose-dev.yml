@@ -46,7 +46,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
-      -js --auth=memphis --websocket_no_tls=true -m 8222
+      -js --auth=memphis
       
   memphis-rest-gateway:
     image: "memphisos/memphis-rest-gateway:master"
