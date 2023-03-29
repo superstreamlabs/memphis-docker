@@ -39,13 +39,7 @@ services:
       - ANALYTICS=true
       - USER_PASS_BASED_AUTH=false
       - CONNECTION_TOKEN=memphis
-      - JWT_SECRET=JWT_TEST_PURPOSE
-      - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
-      - METADATA_DB_USER=memphis
-      - METADATA_DB_PASS=memphis
-      - METADATA_DB_DBNAME=memphis
       - METADATA_DB_HOST=memphis-metadata
-      - METADATA_DB_PORT=5005
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
