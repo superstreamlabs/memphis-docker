@@ -58,6 +58,7 @@ services:
     environment:
       - JWT_SECRET=JWT_TEST_PURPOSE
       - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
+      - USER_PASS_BASED_AUTH=false
       - CONNECTION_TOKEN=memphis
       - ROOT_USER=root
       - MEMPHIS_HOST=memphis
