@@ -41,8 +41,6 @@ services:
       - METADATA_DB_HOST=memphis-metadata
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: >
-      -js --auth=memphis
 
   memphis-rest-gateway:
     image: "memphisos/memphis-rest-gateway:master"
