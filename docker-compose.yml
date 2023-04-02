@@ -60,6 +60,7 @@ services:
       - USER_PASS_BASED_AUTH=true
       - CONNECTION_TOKEN=memphis
       - ROOT_USER=root
+      - ROOT_PASSWORD=memphis
       - MEMPHIS_HOST=memphis
       - HTTP_PORT=4444
 networks:
