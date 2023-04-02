@@ -41,9 +41,8 @@ services:
       - METADATA_DB_HOST=memphis-metadata
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
   memphis-rest-gateway:
-    image: "memphisos/memphis-rest-gateway:master"
+    image: "memphisos/memphis-rest-gateway:latest"
     depends_on:
       memphis:
         condition: service_healthy
