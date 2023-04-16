@@ -47,9 +47,6 @@ extreme cost reduction, and a significantly lower amount of dev time for data-or
 description: Deploy Memphis over Docker using Docker compose
 ---
 
-# Docker
-
-{% embed url="https://youtu.be/cXAk60hMtHs" %}
 
 ## Requirements
 
