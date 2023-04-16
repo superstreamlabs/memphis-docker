@@ -19,7 +19,7 @@ node {
       dir('memphis-broker'){
         git credentialsId: 'main-github', url: 'git@github.com:memphisdev/memphis-broker.git', branch: gitBranch
       }
-      sh "cat memphis-broker/version.conf > version.conf"
+      sh "cat memphis-broker/version.conf | cut -d "-" -f1 > version.conf"
       sh "rm -rf memphis-broker"
     }
     
