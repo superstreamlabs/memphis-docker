@@ -1,6 +1,6 @@
 services:
   memphis-metadata:
-    image: memphisos/memphis-metadata:15-docker
+    image: memphisos/memphis-metadata:docker-15.2.0-debian-11-r27
     networks:
       - memphis
     ports:
