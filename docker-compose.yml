@@ -36,7 +36,6 @@ services:
     environment:
       - ROOT_PASSWORD=memphis
       - DOCKER_ENV=true
-      - ANALYTICS=true
       - USER_PASS_BASED_AUTH=true
       - CONNECTION_TOKEN=memphis
       - METADATA_DB_HOST=memphis-metadata
