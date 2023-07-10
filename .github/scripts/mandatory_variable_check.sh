@@ -15,6 +15,14 @@ do
   fi
 done
 
+for i in "${array[@]}"
+do
+  if [[ "$(cat docker-compose-latest.yml)" != *"$i"*  ]]; then
+    echo $i
+    STATUS=FALSE
+  fi
+done
+
 if [[ $STATUS == FALSE ]]; then
   exit 1
 fi
