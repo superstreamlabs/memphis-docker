@@ -16,7 +16,7 @@ services:
       - POSTGRESQL_DATABASE=memphis
       - POSTGRESQL_PORT_NUMBER=5005
   memphis:
-    image: "memphisos/memphis:1.0.3-stable"
+    image: "memphisos/memphis:1.1.1-stable"
     depends_on:
       memphis-metadata:
         condition: service_healthy
