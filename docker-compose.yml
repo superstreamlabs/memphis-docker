@@ -11,10 +11,10 @@ services:
     ports:
       - '5005:5005'
     environment:
-      - POSTGRESQL_USERNAME=memphis
-      - POSTGRESQL_PASSWORD=memphis
-      - POSTGRESQL_DATABASE=memphis
-      - POSTGRESQL_PORT_NUMBER=5005
+      POSTGRESQL_USERNAME: memphis
+      POSTGRESQL_PASSWORD: memphis
+      POSTGRESQL_DATABASE: memphis
+      POSTGRESQL_PORT_NUMBER: 5005
   memphis:
     image: "memphisos/memphis:1.4.0"
     depends_on:
@@ -34,11 +34,11 @@ services:
       - "6666:6666"
       - "7770:7770"
     environment:
-      - ROOT_PASSWORD=memphis
-      - DOCKER_ENV=true
-      - USER_PASS_BASED_AUTH=true
-      - CONNECTION_TOKEN=memphis
-      - METADATA_DB_HOST=memphis-metadata
+      ROOT_PASSWORD: memphis
+      DOCKER_ENV: true
+      USER_PASS_BASED_AUTH: true
+      CONNECTION_TOKEN: memphis
+      METADATA_DB_HOST: memphis-metadata
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       
@@ -54,14 +54,14 @@ services:
     ports:
       - "4444:4444"
     environment:
-      - JWT_SECRET=JWT_TEST_PURPOSE
-      - REFRESH_JWT_SECRET=REFRESH_JWT_TEST_PURPOSE
-      - USER_PASS_BASED_AUTH=true
-      - CONNECTION_TOKEN=memphis
-      - ROOT_USER=root
-      - ROOT_PASSWORD=memphis
-      - MEMPHIS_HOST=memphis
-      - HTTP_PORT=4444
+      JWT_SECRET: JWT_TEST_PURPOSE
+      REFRESH_JWT_SECRET: REFRESH_JWT_TEST_PURPOSE
+      USER_PASS_BASED_AUTH: true
+      CONNECTION_TOKEN: memphis
+      ROOT_USER: root
+      ROOT_PASSWORD: memphis
+      MEMPHIS_HOST: memphis
+      HTTP_PORT: 4444
 networks:
   memphis:
     ipam:
