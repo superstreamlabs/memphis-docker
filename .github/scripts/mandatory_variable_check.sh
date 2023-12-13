@@ -4,7 +4,7 @@
 STATUS=TRUE
 # Array of mandatory expressions in docker-compose file
 
-array=( DOCKER_ENV=true ROOT_PASSWORD=memphis CONNECTION_TOKEN=memphis )
+array=( DOCKER_ENV: true ROOT_PASSWORD: memphis CONNECTION_TOKEN: memphis )
 
 # For loop that validate each expression in array
 for i in "${array[@]}"
