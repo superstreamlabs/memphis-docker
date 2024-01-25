@@ -1,3 +1,4 @@
+version: '3.3'
 services:
   memphis-metadata:
     image: memphisos/memphis-metadata:docker-15.2.0-debian-11-r27
