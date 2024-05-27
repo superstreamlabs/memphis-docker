@@ -55,7 +55,7 @@ description: Deploy Memphis over Docker using Docker compose
 ### Step 1: Download compose.yaml file
 
 ```
-curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml
+curl -s https://superstreamlabs.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml
 ```
 
 ### Step 2: Run the compose

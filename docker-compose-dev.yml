@@ -35,9 +35,9 @@ services:
       - "7770:7770"
     environment:
       ROOT_PASSWORD: memphis
-      DOCKER_ENV: true
+      DOCKER_ENV: '"true"'
       ENV: staging
-      USER_PASS_BASED_AUTH: true
+      USER_PASS_BASED_AUTH: '"true"'
       CONNECTION_TOKEN: memphis
       METADATA_DB_HOST: memphis-metadata
     volumes:
@@ -57,7 +57,7 @@ services:
     environment:
       JWT_SECRET: JWT_TEST_PURPOSE
       REFRESH_JWT_SECRET: REFRESH_JWT_TEST_PURPOSE
-      USER_PASS_BASED_AUTH: true
+      USER_PASS_BASED_AUTH: '"true"'
       CONNECTION_TOKEN: memphis
       ROOT_USER: root
       ROOT_PASSWORD: memphis
