@@ -16,7 +16,7 @@ services:
       POSTGRESQL_DATABASE: memphis
       POSTGRESQL_PORT_NUMBER: 5005
   memphis:
-    image: "memphisos/memphis:1.4.3"
+    image: "memphisos/memphis:1.4.4"
     depends_on:
       memphis-metadata:
         condition: service_healthy
@@ -35,8 +35,8 @@ services:
       - "7770:7770"
     environment:
       ROOT_PASSWORD: memphis
-      DOCKER_ENV: true
-      USER_PASS_BASED_AUTH: true
+      DOCKER_ENV: '"true"'
+      USER_PASS_BASED_AUTH: '"true"'
       CONNECTION_TOKEN: memphis
       METADATA_DB_HOST: memphis-metadata
     volumes:
@@ -56,7 +56,7 @@ services:
     environment:
       JWT_SECRET: JWT_TEST_PURPOSE
       REFRESH_JWT_SECRET: REFRESH_JWT_TEST_PURPOSE
-      USER_PASS_BASED_AUTH: true
+      USER_PASS_BASED_AUTH: '"true"'
       CONNECTION_TOKEN: memphis
       ROOT_USER: root
       ROOT_PASSWORD: memphis
